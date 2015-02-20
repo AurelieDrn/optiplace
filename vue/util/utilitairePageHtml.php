@@ -6,7 +6,7 @@ public function baniere(){
 	$baniere = '<body>';
 	$baniere.= '<header>';
 	$baniere.= '<div id="Baniere">';
-	$baniere.= '<a href=index.php?menu="true"> <img src="images/OptiPlaceLogoVRouge.png"> </a>';
+	$baniere.= '<a href=index.php?menu="true"> <img src="vue/images/OptiPlaceLogoTranS.png"> </a>';
 	$baniere.= '</div>';
 	return $baniere;
 }
