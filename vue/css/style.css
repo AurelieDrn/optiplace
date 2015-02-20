@@ -1,0 +1,345 @@
+/*
+#onglets
+{
+	position : absolute;
+    border : 1px solid transparent;
+    padding : 0;
+    font : bold 11px Batang, arial, serif;
+    list-style-type : none;
+    left : 60%;
+    margin-top : 0;
+    width : 50%;
+	margin-left : -215px;
+
+}
+
+#onglets li
+{
+	
+    float : left;
+    height : 21px;
+    background-color: #F4F9FD;
+    margin : 2px 2px 0 2px;  
+    border : 1px solid #9EA0A1;
+}
+
+#onglets li.panier
+{
+    position : relative;
+    left : 50%;
+	background-image:linear-gradient(#40E080,#90F080);
+}
+
+#onglets li.deconnexion
+{
+    position : relative;
+    left : 50%;
+	background-image:linear-gradient(#D07080,#F0B080);
+}
+
+#onglets li.fonction
+{
+	
+}
+
+#onglets li.active
+{
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+}
+
+#onglets a
+{
+    display : block;
+    text-decoration : none;
+}
+
+#onglets a:hover
+{
+    background : #111;
+}
+
+#Baniere {
+	background-size: cover;
+	margin:0;
+	padding:0;
+}
+
+a.img{
+text-align: center;
+text-decoration : none;
+}
+
+h1,h2{
+font-family: monospace;
+color: #6495ed;
+text-align: center;
+}
+
+b.value{
+font-family: monospace;
+color: #6495ed;
+text-align: center;
+
+}
+
+b.type{
+font-family: monospace;
+color: #666;;
+text-align: center;
+
+}
+
+b.type1{
+font-family: monospace;
+color: #666;
+text-align: right;
+}
+
+
+
+
+table {
+border: medium solid #6495ed;
+border-collapse: collapse;
+width: 50%;
+}
+
+nav{
+text-align : center;
+text-decoration : none;
+}
+
+div{
+text-align : center;
+text-decoration : none;
+}
+
+div.panier{
+display : block;
+border : 2px solid lightblue;
+margin-left:auto; 
+margin-right:auto;
+width:40%;
+}
+
+div.img{
+display : block;
+color : #666;
+border : 1px solid #9EA0A1;
+width: 10%;
+margin-left:auto; 
+margin-right:auto;
+background-image:linear-gradient(#40E080,#90F080);
+}
+
+table.img{
+border-spacing: 0; 
+border-collapse: collapse ; 
+border: none;
+margin-left:40%;
+}
+
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
+th {
+font-family: monospace;
+border: thin solid #6495ed;
+width: 50%;
+padding: 5px;
+background-color:#EFF6FF;
+
+}
+td {
+font-family: sans-serif;
+border: thin solid #6495ed;
+width: 50%;
+padding: 5px;
+text-align: left;
+background-color: #ffffff;
+}
+
+
+td.img{
+border: none;
+}
+
+
+caption {
+font-family: sans-serif;
+}
+*/
+
+
+
+#TitreIcon {
+	list-style-type : none;
+	width: 1024;
+	background-color: #212121;
+	background-position: center;
+	margin:0 auto;
+}
+
+#textIcon li{
+	display: inline-block
+}
+
+#Univ {
+	margin-right: 20px;
+	margin-left: 20px;
+	font : 20px Avenir;
+	color: #FFF;
+	text-decoration: none;
+}
+
+#Bienvenue {
+	margin-right: 20px;
+	margin-left: 20px;
+	font : 20px Avenir;
+	color: #FFF;
+	font-style: italic;
+	text-decoration: underline;
+	float : right;
+}
+
+#Baniere {
+	width: 100%;
+	height: 100px;
+	background: url(../../images/OptiPlaceLogoVRouge.png);
+	background-size: 200px;
+	background-repeat: no-repeat;
+	background-position: left;
+	margin:0 auto;
+}
+
+#Baniere a{
+	font : 45px Avenir;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+#Onglets{
+	list-style-type : none;
+	width: 100%;
+	background-color: #212121;
+	background-position: center;
+	margin:0 auto;
+}
+
+#Onglets li{
+	display: inline-block;
+}
+
+#deconex {
+	float : right;
+}
+
+#Onglets a{
+	margin-right: 20px;
+	margin-left: 20px;
+	font : 20px Avenir;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+#Onglets li.item:hover
+{
+    background : #333;
+}
+
+.content {
+	
+	background-position: center;
+	width: 1024;
+	margin:0 auto;
+}
+
+.text {
+	margin-top: 10px;
+	background-color: #E5E5E5;
+	background-position: center;
+}
+
+.subcontent {
+	margin : 10px;
+	padding :10px;
+}
+
+.select {
+	
+	padding :10px;
+}
+
+.conex{
+	width : 200px;
+}
+ 
+.usrmodif {
+	width : 150px;
+}
+
+.buttonEdit{
+	width : 100px;
+}
+
+* {
+	margin:0;
+	padding:0;
+}
+
+p {
+	font : 15px Avenir;
+	color: #000;
+	text-decoration: none;
+}
+
+header {
+	background-color: #a10320;
+	margin:0;
+	padding:0;
+}
+
+img{
+	max-width: 200px;
+	height: auto;
+}
+
+h1 {
+	margin : 20px;
+	font : 30px Avenir;
+	color: #000;
+	text-decoration: none;
+}
+
+h2 {
+	margin : 20px;
+	font : 25px Avenir;
+	color: #000;
+	text-decoration: none;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file], input[type=submit] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
