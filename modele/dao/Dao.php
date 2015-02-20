@@ -1,10 +1,10 @@
 <?php
 require_once(__DIR__.'/ConnexionException.php');
 require_once(__DIR__.'/TableAccesException.php');
-require_once(__DIR__.'/../BEAN/Place.php');
-require_once(__DIR__.'/../BEAN/Salle.php');
-require_once(__DIR__.'/../BEAN/Etudiant.php');
-require_once(__DIR__.'/../BEAN/GroupeEtudiant.php');
+require_once(__DIR__.'/../bean/Place.php');
+require_once(__DIR__.'/../bean/Salle.php');
+require_once(__DIR__.'/../bean/Etudiant.php');
+require_once(__DIR__.'/../bean/GroupeEtudiant.php');
 
 
 class Dao{
