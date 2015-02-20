@@ -7,12 +7,11 @@
 			echo $utilitaireHtml->genereBandeau();
 			?>
 			<div class="jumbotron">
-				<h1>Gestion des salles</h1>	
-					<p>Ici, il vous sera possible d'importer une salle à partir d'un fichier Excel, de visualiser, de créer et d'exporter vos salles.</p>
+				<h1>Gestion des salles</h1>			
 			</div>
 			
 			<div class="panel-group" id="accordion">
-				<div class="panel panel-primary">
+				<div class="panel panel-info">
 					<div class="panel-heading">
 						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#accordionOne">Importer une salle</a></h4>
 					</div>
@@ -64,7 +63,7 @@
 				<div class="panel panel-success">
 					<div class="panel-heading">
 					  <h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwo">Collapsible Accordion 2</a>
+						<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwo">Créer une salle</a>
 					  </h4>
 					</div>
 					<div id="accordionTwo" class="panel-collapse collapse">
@@ -78,9 +77,9 @@
 				</div>
 				<div class="panel panel-warning">
 					<div class="panel-heading">
-					  <h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion" href="#accordionThree">Collapsible Accordion 3</a>
-					  </h4>
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#accordionThree">Afficher les salles</a>
+						</h4>
 					</div>
 					<div id="accordionThree" class="panel-collapse collapse">
 						<div class="panel-body">

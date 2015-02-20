@@ -4,14 +4,14 @@
 	class VueGererEtudiants{
 		public function genereVueAccueilEtu(){
 			$utilitaireHtml=new UtilitairePageHtml();
+			// Display header
 			echo $utilitaireHtml->genereBandeau();
-			echo '<div class = "content">';
-			echo '<div class = "text">';
-			echo '<div class = "subcontent">';
-			echo "<h2> Modifier les listes des étudiants <h2>";
-			echo '</div>';
-			echo '</div>';
-			echo '</div>';
+			?>
+				<div class="jumbotron">
+					<h1>Gestion des étudiants</h1>	
+				</div>
+			<?php
+			// Display footer
 			echo $utilitaireHtml->generePied();
 		}
 		
