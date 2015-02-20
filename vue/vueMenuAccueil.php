@@ -6,25 +6,25 @@
 			$utilitaireHtml=new UtilitairePageHtml();
 			echo $utilitaireHtml->genereBandeau();
 			?>
+			<!--
 			<div id = "MenuContent2"> 
 			   <div id="SubMenu"> 
-			      Exemple de texte centré <br /> sur plusieurs lignes 
+  				<a href=index.php?placerPage="true"> Placer les étudiants </a>
+  				<a href=index.php?etuPage="true"> Gérer les étudiants </a>
+  				<a href=index.php?sallesPage="true"> Gérer les salles </a>
 			   </div> 
 			</div>
-			<!--
+			-->
 			<div id = "MenuContent">
-				<a href=index.php?placerPage="true"> Placer les étudiants </a>
-				<a href=index.php?etuPage="true"> Gérer les étudiants </a>
-				<a href=index.php?sallesPage="true"> Gérer les salles </a>
 				<table>
 					<tr>
-						<td class="cadre"></td>
-						<td class="cadre"></td>
-						<td class="cadre"></td>
+						<td class="cadre"><a href=index.php?placerPage="true"> Placer les étudiants </a>
+						<td class="cadre"><a href=index.php?etuPage="true"> Gérer les étudiants </a>
+						<td class="cadre"><a href=index.php?sallesPage="true"> Gérer les salles </a>
 					</tr>
 				</table>
-		</div>
-			-->
+			</div>
+			
 			<!--
 			<div class = "content">
 			<div class = "text">
