@@ -18,6 +18,7 @@
 					<div id="accordionOne" class="panel-collapse collapse in">
 						<div class="panel-body">
 							<?php
+								// Alert messages
 								if (isset($_GET['msg'])) {
 									if ($_GET['msg']) {
 										echo '<div class="alert alert-success alert-dismissible" role="alert">
@@ -26,15 +27,15 @@
 											</div>';
 									}
 									else {
-										echo '<div class="alert alert-warning alert-dismissible" role="alert">
+										echo '<div class="alert alert-danger alert-dismissible" role="alert">
 												<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-												<strong>Erreur!</strong> Erreur lors du téléchargement du fichier.
+												<strong>Erreur!</strong> Le fichier n\'a pas pu être téléchargé.
 											</div>';
 									}
-								}
-							
+								}	
 							?>
-							<form enctype="multipart/form-data" action="index.php?uploadSal='true'" method="post">
+								<!-- Form -->
+							<form enctype="multipart/form-data" action="index.php?uploadSal=true" method="post">
 								<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 							    <div class="input-group">
 									<span class="input-group-btn">
@@ -85,49 +86,27 @@
 			<?php
 				echo $utilitaireHtml->generePied();
 		}
-			public function genereVueUploadSal() {
-				$utilitaireHtml=new UtilitairePageHtml();
-				// Create header
-				echo $utilitaireHtml->genereBandeau();
-				?>
-					<div class="jumbotron">
-						<h1>Gestion des salles</h1>	
-					</div>
-				<?php
-				// Display errors
-				ini_set ("display_errors", "1");
-				error_reporting(E_ALL);
+		
+		public function genereVueUploadSal() {
+			$utilitaireHtml=new UtilitairePageHtml();
+			
+			// Create header
+			echo $utilitaireHtml->genereBandeau();
+			?>
+			<div class="jumbotron">
+				<h1>Gestion des salles</h1>	
+			</div>
+			<?php
+			// Display errors
+			ini_set ("display_errors", "1");
+			error_reporting(E_ALL);
 				
-				// Move uploaded file
-				$new_path = 'modele/tmp/'.$_FILES['userfile']['name'];
-				if (rename($_FILES['userfile']['tmp_name'], $new_path))
-				{
-					$b = true;
-					/*echo '<div class="alert alert-success alert-dismissible" role="alert">
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<strong>Bravo!</strong> Votre fichier a été téléchargé avec succès.
-						</div>';*/
-				}
-				else
-				{
-					$b = false;
-					/*echo '<div class="alert alert-warning alert-dismissible" role="alert">
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<strong>Erreur!</strong> Erreur lors du téléchargement du fichier.
-						</div>';*/
-				}
-				
-				//	Convert excel file to csv
-				 
-				// Various excel formats supported by PHPExcel library
-				$excel_readers = array(
-					'Excel5' ,
-					'Excel2003XML' ,
-					'Excel2007' ,
-				);
-				 
+			// Move uploaded file
+			$new_path = 'modele/tmp/'.$_FILES['userfile']['name'];
+			if (rename($_FILES['userfile']['tmp_name'], $new_path))
+			{
 				require_once('vue/lib/PHPExcel.php');
-				 
+			 
 				$reader = PHPExcel_IOFactory::createReader('Excel2007'); 
 				$reader->setReadDataOnly(true);
 				 
@@ -138,15 +117,30 @@
 				
 				$csvFile_path = 'modele/tmp/'.basename($_FILES['userfile']['name'], '.xlsx').'.csv';
 				$writer->save($csvFile_path);
-				 				
+								
 				// Delete old Excel file
 				unlink('modele/tmp/'.$_FILES['userfile']['name']);
 				
+				// Redicrect
+				header('Location: index.php?sallesPage=true&msg=true');
+			}
+			else
+			{
+				// Redirect
+				header('Location: index.php?sallesPage=true&msg=false');
+			}
 				
-				header('Location: index.php?sallesPage=true&msg='.$b.'');
-				
-				// Create footer
-				echo $utilitaireHtml->generePied();
-			}	
+			//	Convert excel file to csv
+			 
+			// Various excel formats supported by PHPExcel library
+			$excel_readers = array(
+				'Excel5' ,
+				'Excel2003XML' ,
+				'Excel2007' ,
+			);
+			 
+			// Create footer
+			echo $utilitaireHtml->generePied();
+		}	
 	}
 	?>
