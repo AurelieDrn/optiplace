@@ -4,5 +4,3 @@ Dans le fichier upload_and_convert.php, à la ligne 34, on utilise donc Excel200
 De même, l'extention par défaut est .xlsx, à changer dans le même fichier si besoin.
 
 La librairie PHPExcel est présente en entière, on n'a pas trié les fichiers.
-
-fes igthseigh
