@@ -1,0 +1,66 @@
+<?php
+
+require_once __DIR__."/../BEAN/Salle.php";
+require_once __DIR__."/../BEAN/GroupeEtudiant.php";
+require_once __DIR__."/../BEAN/Place.php";
+require_once __DIR__."/../BEAN/Etudiant.php";
+
+class CsvReader{
+
+	#From a CSV File : get an object Salle that represent a classroom/amphitheater.
+	#CSV form must be :
+	#				-> File Name : <SITE> - <NUMERO>
+	#				-> Else : The representation of the Salle (<ETAT PLACE>, <ETAT PLACE>, ..., <ETAT PLACE>)
+	public function salle_from_csv($path){
+		ini_set('auto_detect_line_endings',TRUE); //FIX PROBLEM WITH MACS
+		
+		#GET SITE AND NUMERO OF A SALLE (in his file name)
+		if (!preg_match("^([a-zA-Z]| )+ - ([a-zA-Z0-9]|/)+$")){
+			return false;
+		}
+		$filename = substr(strrchr($path, "/"), 1);
+		$site_numero = split(" - ",$filename);
+		$handle = fopen($path,'r');
+		
+		#REPRESENTATION
+		$liste = Array();
+		$pos = 1;
+		while (($data = fgetcsv($handle)) !== FALSE) {
+			$data2 = Array();
+			foreach($data as $k){
+				$data2[] = new Place(($k > 0 ? $pos++ : 0) , $k);
+			}
+			$liste[] = $data2;
+		}
+		ini_set('auto_detect_line_endings',FALSE);
+		return new Salle($site_numero[0], $site_numero[1], $liste);
+	}
+	
+	#DEPRECATED -> NEED TO BE REWRITE
+	#From a CSV File : get an object GroupeEtudiant that represent a group of student.
+	#CSV form must be : 
+	#				-> First line : Name of the group of Etudiant
+	#				-> Else : All members of the group (<NOM>;<PRENOM>)
+	public function groupeEtudiant_from_csv($path){
+		ini_set('auto_detect_line_endings',TRUE); //FIX PROBLEM WITH MACS
+		$handle = fopen($path,'r');
+		
+		#FIRST LINE
+		$data = fgetcsv($handle); 
+		$title = $data[0];
+		#ELSE
+		$liste = Array();
+		while ( ($data = fgetcsv($handle) ) !== FALSE ) {
+			$data2 = Array();
+			foreach($data as $etudiant){
+				$data2[] = Array('nom' => stroupper($etudiant[0]), 'prenom' => $etudiant[1]);
+			}
+			$liste[] = $data2;
+		}
+		ini_set('auto_detect_line_endings',FALSE);
+		return new GroupeEtudiant($title, $liste);
+	}
+
+}
+
+?>
