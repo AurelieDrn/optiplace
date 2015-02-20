@@ -6,42 +6,33 @@
 			$utilitaireHtml=new UtilitairePageHtml();
 			echo $utilitaireHtml->genereBandeau();
 			?>
-			<!--
-			<div id = "MenuContent2"> 
-			   <div id="SubMenu"> 
-  				<a href=index.php?placerPage="true"> Placer les étudiants </a>
-  				<a href=index.php?etuPage="true"> Gérer les étudiants </a>
-  				<a href=index.php?sallesPage="true"> Gérer les salles </a>
-			   </div> 
-			</div>
-			-->
 			<div id = "MenuContent">
 				<table>
 					<tr>
-						<td class="cadre"><a href=index.php?placerPage="true"><img src="vue/images/PlacementICN.png" /></a>
-						<td class="cadre"><a href=index.php?etuPage="true"> Gérer les étudiants </a>
-						<td class="cadre"><a href=index.php?sallesPage="true"> Gérer les salles </a>
+						<td class="cadre"><a href=index.php?placerPage="true">
+							<div>
+								<img src="vue/images/PlacementICN.png"></br>
+								 Placer les étudiants
+							</div>
+						</a>
+						</td>
+						<td class="cadre"><a href=index.php?etuPage="true">
+							<div>
+								<img src="vue/images/EtudiantICN.png"></br>
+								 Gérer les étudiants
+							</div>
+						</a>
+						</td>
+						<td class="cadre"><a href=index.php?sallesPage="true">
+							<div>
+								<img src="vue/images/AmphiICN.png"></br>
+								 Gérer les salles
+							</div>
+						</a>
+						</td>
 					</tr>
 				</table>
 			</div>
-			
-			
-			<!--
-			<div class = "content">
-			<div class = "text">
-			<div class = "subcontent">
-				<table>
-					<tr>
-						<td><a href=index.php?placerPage="true"> Placer les étudiants </a></td>
-						<td><a href=index.php?etuPage="true"> Gérer les étudiants </a></td>
-						<td><a href=index.php?sallesPage="true"> Gérer les salles </a></td>
-					</tr>
-				</table>
-			<h2> Modifier les salles <h2>
-			</div>
-			</div>
-			</div>
-			-->
 		<?php
 			echo $utilitaireHtml->generePied();
 		}
