@@ -46,12 +46,9 @@
 }
 
 #MenuContent {
-	width: auto;
-	height:auto;
-	align:center;
-	line-height:auto;
-	text-align:center;
-	vertical-align:middle;
+    width: auto;
+    text-align: center;
+    margin-top: 15%;
 }
 
 #MenuContent table {

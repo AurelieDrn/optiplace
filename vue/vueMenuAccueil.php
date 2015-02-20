@@ -18,12 +18,13 @@
 			<div id = "MenuContent">
 				<table>
 					<tr>
-						<td class="cadre"><a href=index.php?placerPage="true"> Placer les étudiants </a>
+						<td class="cadre"><a href=index.php?placerPage="true"><img src="vue/images/PlacementICN.png" /></a>
 						<td class="cadre"><a href=index.php?etuPage="true"> Gérer les étudiants </a>
 						<td class="cadre"><a href=index.php?sallesPage="true"> Gérer les salles </a>
 					</tr>
 				</table>
 			</div>
+			
 			
 			<!--
 			<div class = "content">
