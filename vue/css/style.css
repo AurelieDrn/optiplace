@@ -15,6 +15,7 @@
 	margin : 10 10;
 }
 
+/*
 #Onglets{
 	list-style-type : none;
 	width: 100%;
@@ -26,50 +27,27 @@
 #Onglets li{
 	display: inline-block;
 }
-
-#MenuContent2 {
-
-	display:table; 
-	height:auto; 
-	overflow: hidden; 
-	width: 100%; 
-	background-color: #EBEBEB; 
-	border:solid 1px black;
-}
-
-#SubMenu{
-	display:table-cell; 
-	vertical-align:middle; 
-	width:100%; 
-	margin:0 auto; 
-	text-align:center;
-}
-
+*/
 #MenuContent {
-    width: auto;
-    text-align: center;
-    margin-top: 15%;
+	width: auto;
+	text-align:center;
+	margin-top:15%;
 }
 
 #MenuContent table {
+	border-collapse: separate;
+	border-spacing: 20px;
 	background-position: center;
 	margin:0 auto;
 }
 
 #MenuContent td {
-	align:center;
-	vertical-align:middle;
-	align="center"; 
-	margin:0 auto;
+	width : 200px;
+	text-align:center;
 }
 
-#deconex {
-	float : right;
-}
 
 #Onglets a{
-	margin-right: 20px;
-	margin-left: 20px;
 	font : 20px Avenir;
 	color: #FFFFFF;
 	text-decoration: none;
@@ -83,14 +61,34 @@
 .cadre {
 	border-radius: 10px;
 	background-color: #B10000;
+	
+	-webkit-transition: all 0.7s ease;
+	transition: all 0.7s ease;
 }
 
 .cadre a {
+	margin: 20px;
 	font : 20px Avenir;
 	color: #FFF;
 	text-decoration: none;
 }
 
+.cadre a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+
+
+.cadre img {
+	width: 100px;
+}
+
+.cadre:hover {
+-webkit-box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, .75);
+box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, .75);
+}
+
+/*
 .content {
 	background-position: center;
 	width: 1024;
@@ -123,6 +121,7 @@
 .buttonEdit{
 	width : 100px;
 }
+*/
 
 * {
 	margin:0;
@@ -135,17 +134,14 @@ p{
 	text-decoration: none;
 }
 
+
 header {
 	background-color: #B10000;
 	margin:0;
 	padding:0;
 }
 
-img{
-	max-width: 200px;
-	height: auto;
-}
-
+/*
 h1 {
 	margin : 20px;
 	font : 30px Avenir;
@@ -159,6 +155,7 @@ h2 {
 	color: #000;
 	text-decoration: none;
 }
+*/
 
 .btn-file {
   position: relative;
