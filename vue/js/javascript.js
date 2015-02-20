@@ -19,3 +19,14 @@ $(document).ready( function() {
         
     });
 });
+
+function testTypeFichier() {
+	var nomFich = document.getElementById("userfile").value;
+	if (nomFich.slice(-4) == "xlsx") {
+		return true;
+	}
+	else {
+		window.location.replace("index.php?sallesPage=true&erreurType=true");
+		return false;
+	}
+}
