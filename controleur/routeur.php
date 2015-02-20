@@ -32,6 +32,9 @@ class Routeur {
 		else if(isset($_GET["sallesPage"])){
 			$this->ctrlGererSalles->accueilSal();
 		}
+		else if(isset($_GET["uploadSal"])) {
+			$this->ctrlGererSalles->uploadSal();
+		}
 		else {
 			$this->ctrlMenuAccueil->accueilMenu();
 		}	
