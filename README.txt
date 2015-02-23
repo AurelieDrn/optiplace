@@ -5,3 +5,5 @@ De même, l'extention par défaut est .xlsx, à changer dans le même fichier si
 
 La librairie PHPExcel est présent en entière, on n'a pas trié les fichiers.
 
+L'application utilise des cookies avec la bibliothèque jQuery http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js pour garder ouvert le dernier accordéon ouvert après un rafraichissement de page.
+
