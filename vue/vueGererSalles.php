@@ -11,11 +11,23 @@
 			</div>
 			
 			<div class="panel-group" id="accordion">
-				<div class="panel panel-info">
+				<div class="panel panel-success">
 					<div class="panel-heading">
-						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#accordionOne">Importer une salle</a></h4>
+						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#accordionOne">Créer une salle</a></h4>
 					</div>
 					<div id="accordionOne" class="panel-collapse collapse in">
+						<div class="panel-body">
+							qsfsdgdfgdh
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-success">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwo">Importer une salle</a>
+					  </h4>
+					</div>
+					<div id="accordionTwo" class="panel-collapse collapse">
 						<div class="panel-body">
 							<div class="alert alert-info" role="alert"><strong>Important!</strong> Le fichier à importer doit être nommé de la façon suivante : &lt;site&gt; - &lt;numero&gt;.xlsx</div>	
 							<?php							
@@ -61,21 +73,6 @@
 					</div>
 				</div>
 				<div class="panel panel-success">
-					<div class="panel-heading">
-					  <h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwo">Créer une salle</a>
-					  </h4>
-					</div>
-					<div id="accordionTwo" class="panel-collapse collapse">
-						<div class="panel-body">
-							Change does not roll in on the wheels of inevitability,
-							but comes through continuous struggle.
-							And so we must straighten our backs and work for
-							our freedom. A man can't ride you unless your back is bent.
-						</div>
-					</div>
-				</div>
-				<div class="panel panel-warning">
 					<div class="panel-heading">
 						<h4 class="panel-title">
 							<a data-toggle="collapse" data-parent="#accordion" href="#accordionThree">Afficher les salles</a>

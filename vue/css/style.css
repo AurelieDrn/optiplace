@@ -60,7 +60,7 @@
 
 .cadre {
 	border-radius: 10px;
-	background-color: #B10000;
+	background-color: #B10000; /* rouge */
 	
 	-webkit-transition: all 0.7s ease;
 	transition: all 0.7s ease;
@@ -178,4 +178,8 @@ h2 {
 input[readonly] {
   background-color: white !important;
   cursor: text !important;
+}
+
+.panel-default >.panel-heading {
+    background-color: red;
 }

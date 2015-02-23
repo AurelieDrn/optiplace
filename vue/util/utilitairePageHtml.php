@@ -40,6 +40,7 @@ public function genereEnteteHtml(){
 	$entete.='<script src="http://code.jquery.com/jquery.min.js"></script>';
 	$entete.='<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>';
 	$entete.='<script src="vue/js/javascript.js"></script>';
+	$entete.='<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js"></script>';
 	$entete.= '</head>';	
 	return $entete;
 }
