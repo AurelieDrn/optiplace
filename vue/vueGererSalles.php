@@ -6,53 +6,46 @@
 			$utilitaireHtml=new UtilitairePageHtml();
 			echo $utilitaireHtml->genereBandeau();
 			?>
-			<div class="jumbotron">
-				<h1>Gestion des salles</h1>			
-			</div>
-			
-			<div class="panel-group" id="accordion">
-				<div class="panel panel-success">
-					<div class="panel-heading">
-						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#accordionOne">Créer une salle</a></h4>
-					</div>
-					<div id="accordionOne" class="panel-collapse collapse in">
-						<div class="panel-body">
-							qsfsdgdfgdh
-						</div>
-					</div>
+			<div class="container documents">
+				<h1>Gestion des salles</h1>	
+				
+				<div class="col-md-3">
+					<button type="button" class="btn btn-danger btn-block bouton-creer">Créer</button>
+					<button type="button" class="btn btn-danger btn-block bouton-afficher">Afficher</button>
+					<button type="button" class="btn btn-danger btn-block bouton-importer">Importer</button>
+					<button type="button" class="btn btn-danger btn-block bouton-exporter">Exporter</button>
 				</div>
-				<div class="panel panel-success">
-					<div class="panel-heading">
-					  <h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwo">Importer une salle</a>
-					  </h4>
-					</div>
-					<div id="accordionTwo" class="panel-collapse collapse">
-						<div class="panel-body">
-							<div class="alert alert-info" role="alert"><strong>Important!</strong> Le fichier à importer doit être nommé de la façon suivante : &lt;site&gt; - &lt;numero&gt;.xlsx</div>	
-							<?php							
-							// Alert messages
-							if (isset($_GET['msg'])) {
-								if ($_GET['msg']) {
-									echo '<div class="alert alert-success alert-dismissible" role="alert">
-											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-											<strong>Bravo!</strong> Votre fichier a été téléchargé avec succès.
-										</div>';
-								}
-								else {
-									echo '<div class="alert alert-danger alert-dismissible" role="alert">
-											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-											<strong>Erreur!</strong> Le fichier n\'a pas pu être téléchargé.
-										</div>';
-								}
-							}	
-							if (isset($_GET['erreurType'])) {
-								echo '<div class="alert alert-warning alert-dismissible" role="alert">
-											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-											<strong>Attention!</strong> Le fichier doit être issu d\'une version Excel 2003 à 2010. 
-										</div>';
+
+				<div class="col-md-9">
+					<?php							
+						// Alert messages
+						if (isset($_GET['msg'])) {
+							if ($_GET['msg']) {
+								echo '<div class="alert alert-success alert-dismissible" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<strong>Bravo!</strong> Votre fichier a été téléchargé avec succès.
+									</div>';
 							}
-							?>
+							else {
+								echo '<div class="alert alert-danger alert-dismissible" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<strong>Erreur!</strong> Le fichier n\'a pas pu être téléchargé.
+									</div>';
+							}
+						}	
+						if (isset($_GET['erreurType'])) {
+							echo '<div class="alert alert-warning alert-dismissible" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<strong>Attention!</strong> Le fichier doit être issu d\'une version Excel 2003 à 2010. 
+									</div>';
+						}
+					?>
+						<div class="well modal-creer cacher">Créer!</div>
+						<div class="well modal-afficher cacher">Afficher!</div>
+						<div class="well modal-importer cacher">
+							
+						<div class="alert alert-info" role="alert"><strong>Important!</strong> Le fichier à importer doit être nommé de la façon suivante : &lt;site&gt; - &lt;numero&gt;.xlsx</div>	
+							
 							<!-- Form -->
 							<form onSubmit="return testTypeFichier();" enctype="multipart/form-data" action="index.php?uploadSal=true" method="post">
 								<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
@@ -69,40 +62,17 @@
 								</div>
 								
 							</form>
+
 						</div>
-					</div>
-				</div>
-				<div class="panel panel-success">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion" href="#accordionThree">Afficher les salles</a>
-						</h4>
-					</div>
-					<div id="accordionThree" class="panel-collapse collapse">
-						<div class="panel-body">
-							You must take personal responsibility.
-							You cannot change the circumstances,
-							the seasons, or the wind, but you can change yourself.
-							That is something you have charge of.
-						</div>
-					</div>
-				</div>
-			</div>		
-			
+						<div class="well modal-exporter cacher">Exporter!</div>
+				</div>	
+			</div>	
+
 			<?php
 				echo $utilitaireHtml->generePied();
 		}
 		
 		public function genereVueUploadSal() {
-			$utilitaireHtml=new UtilitairePageHtml();
-			
-			// Create header
-			echo $utilitaireHtml->genereBandeau();
-			?>
-			<div class="jumbotron">
-				<h1>Gestion des salles</h1>	
-			</div>
-			<?php
 			// Display errors
 			ini_set ("display_errors", "1");
 			error_reporting(E_ALL);
@@ -135,18 +105,6 @@
 				// Redirect
 				header('Location: index.php?sallesPage=true&msg=false');
 			}
-				
-			//	Convert excel file to csv
-			 
-			// Various excel formats supported by PHPExcel library
-			$excel_readers = array(
-				'Excel5' ,
-				'Excel2003XML' ,
-				'Excel2007' ,
-			);
-			 
-			// Create footer
-			echo $utilitaireHtml->generePied();
 		}	
 	}
 	?>

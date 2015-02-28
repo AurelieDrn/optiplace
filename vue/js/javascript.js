@@ -35,18 +35,51 @@ $(document).ready( function() {
             //show the account_last visible group
             $("#" + last).addClass("in");
         }
+
+    // Show or hide modals
+    $('.bouton-creer').on('click', function() {
+        $('.modal-creer').show();
+        $('.modal-afficher').hide();
+        $('.modal-importer').hide();
+        $('.modal-exporter').hide();
+    });    
 	
+    $('.bouton-afficher').on('click', function() {
+        $('.modal-afficher').show();
+        $('.modal-creer').hide();
+        $('.modal-importer').hide();
+        $('.modal-exporter').hide();
+    }); 
+
+    $('.bouton-importer').on('click', function() {
+        $('.modal-importer').show();
+        $('.modal-creer').hide();
+        $('.modal-afficher').hide();
+        $('.modal-exporter').hide();
+    }); 
+
+    $('.bouton-exporter').on('click', function() {
+        $('.modal-exporter').show();
+        $('.modal-creer').hide();
+        $('.modal-afficher').hide();
+        $('.modal-importer').hide();
+    }); 
+
 });
 
 // Check if the input file is an xlsx file 
 function testTypeFichier() {
 	var nomFich = document.getElementById("userfile").value;
-	if (nomFich.slice(-4) == "xlsx") {
+	if (nomFich.slice(-4) == "xlsx") { // Extension is correct
 		return true;
 	}
+    else if(nomFich.slice(-4) == "") { // No file
+        return false;
+    }
 	else {
 		window.location.replace("index.php?sallesPage=true&erreurType=true");
 		return false;
 	}
 }
+
 

@@ -183,3 +183,7 @@ input[readonly] {
 .panel-default >.panel-heading {
     background-color: red;
 }
+
+.cacher {
+	display:none;
+}
