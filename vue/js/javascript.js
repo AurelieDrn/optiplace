@@ -19,23 +19,6 @@ $(document).ready( function() {
         
     });
 	
-	 //when a group is shown, save it as the active accordion group
-        $("#accordion").on('shown.bs.collapse', function () {
-            var active = $("#accordion .in").attr('id');
-            $.cookie('activeAccordionGroup', active);
-          //  alert(active);
-        });
-        $("#accordion").on('hidden.bs.collapse', function () {
-            $.removeCookie('activeAccordionGroup');
-        });
-        var last = $.cookie('activeAccordionGroup');
-        if (last != null) {
-            //remove default collapse settings
-            $("#accordion .panel-collapse").removeClass('in');
-            //show the account_last visible group
-            $("#" + last).addClass("in");
-        }
-
     // Show or hide modals
     $('.bouton-creer').on('click', function() {
         $('.modal-creer').show();
@@ -64,8 +47,23 @@ $(document).ready( function() {
         $('.modal-afficher').hide();
         $('.modal-importer').hide();
     }); 
-
+	
+	// Alert messages
+	if (getUrlParameter('sallesPage') == "true" && getUrlParameter('msg') == "true") {
+		importSuccess();
+	}
+	if (getUrlParameter('sallesPage') == "true" && getUrlParameter('msg') == "false") {
+		importError();
+	}
 });
+
+function importSuccess() {
+	swal("Bravo !", "Votre fichier a été téléchargé avec succès.", "success");
+}
+
+function importError() {
+	swal("Nous sommes désolés !", "Votre fichier n'a pas pu être téléchargé. Veuillez vérifier que votre fichier soit d'extension .xlsx de version 2003 à 2010 et que vous possédez les droits pour importer des fichiers sur cet espace.", "error");
+}
 
 // Check if the input file is an xlsx file 
 function testTypeFichier() {
@@ -74,12 +72,24 @@ function testTypeFichier() {
 		return true;
 	}
     else if(nomFich.slice(-4) == "") { // No file
-        return false;
+        swal("Aucun fichier détecté !", "Veuillez sélectionner un fichier Excel.", "info");
+		return false;
     }
 	else {
-		window.location.replace("index.php?sallesPage=true&erreurType=true");
+		swal("Attention !", "Le fichier doit être issu d'une version Excel 2003 à 2010.", "warning");
 		return false;
 	}
 }
 
+// Get url parameter sParam
+function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+        }
+    }
+}    
 
